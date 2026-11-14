@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abdelrahman Elsayed</title>
+  <meta name="description" content="Abdelrahman Elsayed — M.Sc. Computer Vision student at MBZUAI and Data Scientist at xMap.ai. Research on efficient adaptation of vision foundation models for medical imaging.">
+  <meta property="og:title" content="Abdelrahman Elsayed">
+  <meta property="og:description" content="M.Sc. Computer Vision @ MBZUAI · Data Scientist @ xMap.ai · Efficient adaptation of foundation models for medical imaging.">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/53436138?v=4">
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/53436138?s=64&v=4">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #ffffff;
+      --text: #0b1f3a;
+      --muted: #5a6b82;
+      --line: #e3e8f0;
+      --accent: #1d4ed8;
+      --accent-soft: #eef3fc;
+      --shadow: none;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0a1628;
+        --surface: #0a1628;
+        --text: #e6edf7;
+        --muted: #8fa3bf;
+        --line: #1c2c45;
+        --accent: #7aa7ff;
+        --accent-soft: #13284a;
+        --shadow: none;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 15.5px/1.65 Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    strong { font-weight: 600; }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 16px; }
+    nav .brand { font-weight: 600; color: var(--text); }
+    nav ul { display: flex; gap: 18px; list-style: none; margin: 0; padding: 0; font-size: 14px; }
+    nav ul a { color: var(--muted); }
+    nav ul a:hover { color: var(--text); text-decoration: none; }
+
+    header.hero { padding: 64px 0 36px; }
+    .hero-grid { display: grid; grid-template-columns: 120px 1fr; gap: 32px; align-items: center; }
+    .avatar { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 1px solid var(--line); box-shadow: var(--shadow); }
+    h1 { font-size: 34px; line-height: 1.15; margin: 0 0 8px; letter-spacing: -0.02em; }
+    .tagline { color: var(--muted); margin: 0 0 6px; font-size: 17px; }
+    .loc { color: var(--muted); margin: 0 0 18px; font-size: 14px; }
+    .links { display: flex; flex-wrap: wrap; gap: 10px; }
+    .links { gap: 6px 20px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--accent); font-size: 14.5px; font-weight: 500;
+    }
+    .btn svg { width: 16px; height: 16px; fill: currentColor; }
+
+    section { padding: 32px 0; border-top: 1px solid var(--line); }
+    h2 {
+      font-size: 13px; text-transform: uppercase; letter-spacing: .12em;
+      color: var(--muted); font-weight: 600; margin: 0 0 20px;
+    }
+    p { margin: 0 0 14px; }
+
+    .interests { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: 12px; padding: 18px; box-shadow: var(--shadow);
+    }
+    .card h3 { margin: 0 0 6px; font-size: 16px; }
+    .card p { margin: 0; color: var(--muted); font-size: 14.5px; }
+    .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); margin-right: 8px; vertical-align: middle; }
+
+    .pub { display: grid; grid-template-columns: 112px 1fr; gap: 18px; padding: 12px 0; }
+    
+    .venue {
+      align-self: start; justify-self: start;
+      font: 500 12px/1 "JetBrains Mono", ui-monospace, monospace;
+      color: var(--muted); padding-top: 4px; white-space: nowrap;
+    }
+    .pub h3 { margin: 0 0 4px; font-size: 16px; line-height: 1.45; }
+    .pub .authors { color: var(--muted); font-size: 14px; margin: 0 0 2px; }
+    .pub .authors b { color: var(--text); font-weight: 600; }
+    .pub .meta { color: var(--muted); font-size: 14px; font-style: italic; margin: 0 0 6px; }
+    .pub .actions { display: flex; gap: 14px; font-size: 14px; }
+    .note { color: var(--muted); font-size: 13px; margin-top: 8px; }
+
+    .entry { padding: 10px 0; }
+    
+    .entry-head { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .entry h3 { margin: 0; font-size: 16.5px; }
+    .entry .org { color: var(--muted); font-weight: 500; font-size: 15px; }
+    .entry .when { color: var(--muted); font: 13px/1.9 "JetBrains Mono", monospace; text-align: right; white-space: nowrap; }
+    .entry ul { margin: 8px 0 0; padding-left: 20px; color: var(--muted); font-size: 15px; }
+    .entry li { margin: 4px 0; }
+    .entry li strong { color: var(--text); }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 0 8px; margin: 4px 0 14px; }
+    .tag { font-size: 15px; } .tag + .tag::before { content: "·"; color: var(--muted); margin: 0 8px 0 0; }
+    .skill-label { font-size: 14px; color: var(--muted); margin: 0 0 6px; }
+
+    footer { padding: 32px 0 48px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
+
+    @media (max-width: 720px) {
+      nav ul { display: none; }
+      header.hero { padding: 48px 0 28px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 20px; }
+      .avatar { width: 112px; height: 112px; }
+      h1 { font-size: 32px; }
+      .interests { grid-template-columns: 1fr; }
+      .pub { grid-template-columns: 1fr; gap: 8px; }
+      .entry .when { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#">Abdelrahman Elsayed</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#awards">Awards</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap">
+  <header class="hero">
+    <div class="hero-grid">
+      <img class="avatar" src="https://avatars.githubusercontent.com/u/53436138?s=320&v=4" alt="Portrait of Abdelrahman Elsayed">
+      <div>
+        <h1>Abdelrahman Elsayed</h1>
+        <p class="tagline">M.Sc. Computer Vision student at <a href="https://mbzuai.ac.ae">MBZUAI</a> &middot; Data Scientist at <a href="https://xmap.ai">xMap.ai</a></p>
+        <p class="loc">Abu Dhabi, UAE</p>
+        <div class="links">
+          <a class="btn" href="mailto:abdelrahman.elsayed@mbzuai.ac.ae">
+            <svg viewBox="0 0 24 24"><path d="M2 5h20v14H2V5Zm2 2v.5l8 5 8-5V7H4Zm16 2.85-8 5-8-5V17h16V9.85Z"/></svg>
+            Email
+          </a>
+          <a class="btn" href="https://scholar.google.com/citations?hl=en&amp;user=GCS11JkAAAAJ">
+            <svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14Zm0-24L0 9.5l4.84 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.16 4.44L24 9.5Z"/></svg>
+            Scholar
+          </a>
+          <a class="btn" href="https://github.com/python-arch">
+            <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            GitHub
+          </a>
+          <a class="btn" href="https://www.linkedin.com/in/abdelrahman-elsayed-289464275/">
+            <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>I'm an M.Sc. student in Computer Vision at the <strong>Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)</strong>, and a Data Scientist at <strong>xMap.ai</strong>. My research focuses on efficiently adapting vision foundation models to medical imaging &mdash; parameter-efficient fine-tuning, meta-learning, and lightweight segmentation for low-resource settings &mdash; with work published at MICCAI, BMVC and MIUA.</p>
+    <p>Before that, I was a research student at the BioMedIA Lab under Dr. Mohammad Yaqub, where our teams placed 3rd in BraTS 2024 and 2025, and an Applied Science Intern at <strong>Microsoft</strong> working on SwiftKey. I completed my B.Sc. in Computer Science and Engineering at E-JUST, Egypt.</p>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+
+    <article class="pub">
+      <span class="venue">MICCAI 2026</span>
+      <div>
+        <h3>MetaVFM: Meta-Learned Efficient Adaptation of Vision Foundation Models for Medical Imaging</h3>
+        <p class="authors">L. A. Mecharbat, I. Almakky, <b>A. Elsayed</b>, H. Lashen, A. Almsouti, M. Takac, M. Yaqub</p>
+        <p class="meta">Proc. MICCAI, 2026</p>
+        <div class="actions"><a href="https://papers.miccai.org/miccai-2026/0653-Paper4389.html">Paper</a></div>
+      </div>
+    </article>
+
+    <article class="pub">
+      <span class="venue">MIUA 2026</span>
+      <div>
+        <h3>MMRINet: Efficient Mamba-Based Segmentation with Dual-Path Refinement for Low-Resource MRI Analysis</h3>
+        <p class="authors"><b>A. Elsayed</b>, A. Jaheen, M. Yaqub</p>
+        <p class="meta">Accepted to MIUA 2026</p>
+        <div class="actions"><a href="https://arxiv.org/abs/2511.12193">arXiv</a></div>
+      </div>
+    </article>
+
+    <article class="pub">
+      <span class="venue">BMVC 2025</span>
+      <div>
+        <h3>SALT: Singular Value Adaptation with Low-Rank Transformation</h3>
+        <p class="authors"><b>A. Elsayed</b>, S. Hashmi, M. Elseiagy, H. Wang, M. Yaqub, I. Almakky</p>
+        <p class="meta">Proc. British Machine Vision Conference (BMVC), 2025</p>
+        <div class="actions">
+          <a href="https://bmvc2025.bmva.org/proceedings/1013/">Paper</a>
+          <a href="https://github.com/BioMedIA-MBZUAI/SALT">Code</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="pub">
+      <span class="venue">MICCAI 2025</span>
+      <div>
+        <h3>EMedNeXt: An Enhanced Brain Tumor Segmentation Framework for Sub-Saharan Africa using MedNeXt V2 with Deep Supervision</h3>
+        <p class="authors">A. Jaheen*, <b>A. Elsayed*</b>, D. Kim*, D. Tikhonov, M. Scatolin, M. Banerjee, Q. Ji, M. Salem, H. Wang, S. Hashmi, M. Yaqub</p>
+        <p class="meta">Proc. BraTS Challenge, MICCAI, 2025</p>
+        <div class="actions"><a href="https://arxiv.org/abs/2507.23256">arXiv</a></div>
+      </div>
+    </article>
+
+    <article class="pub">
+      <span class="venue">MICCAI 2024</span>
+      <div>
+        <h3>Optimizing Brain Tumor Segmentation with MedNeXt: BraTS 2024 SSA and Pediatrics</h3>
+        <p class="authors">S. Hashmi, J. Lugo, <b>A. Elsayed</b>, D. Saggurthi, M. Elseiagy, A. Nurkamal, J. Walia, F. A. Maani, M. Yaqub</p>
+        <p class="meta">BraTS 2024 Short Challenge Papers, MICCAI, 2024</p>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2411.15872">arXiv</a>
+          <a href="https://github.com/python-arch/BioMbz-Optimizing-Brain-Tumor-Segmentation-with-MedNeXt-BraTS-2024-SSA-and-Pediatrics">Code</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="pub">
+      <span class="venue">ICMISI 2024</span>
+      <div>
+        <h3>A Convergent Approach of Mathematical Modelling and Deep Learning for Inverse Kinematics Solutions in Stewart Platform Parallel Robots</h3>
+        <p class="authors">M. Elseiagy, <b>A. Elsayed</b>, M. Elsamanty</p>
+        <p class="meta">Proc. Int. Conf. Modeling, Simulation and Intelligent Systems (ICMISI), 2024, pp. 194&ndash;199</p>
+        <div class="actions"><a href="https://ieeexplore.ieee.org/abstract/document/10580111/">IEEE</a></div>
+      </div>
+    </article>
+
+    <article class="pub">
+      <span class="venue">JAC-ECC 2025</span>
+      <div>
+        <h3>EgMM-Corpus: A Multimodal Vision-Language Dataset for Egyptian Culture</h3>
+        <p class="authors">M. Gamil, <b>A. Elsayed</b>, A. Lila, A. Gad, H. Abdelgawad, M. Aref, A. Fares</p>
+        <p class="meta">Accepted to JAC-ECC 2025</p>
+        <div class="actions"><a href="https://arxiv.org/abs/2510.16198">arXiv</a></div>
+      </div>
+    </article>
+
+    <p class="note">* Equal contribution. Full list on <a href="https://scholar.google.com/citations?hl=en&amp;user=GCS11JkAAAAJ">Google Scholar</a>.</p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div><h3>Data Scientist</h3><div class="org">xMap.ai &middot; Full-time, independent contractor</div></div>
+        <div class="when">Dec 2024 — Present<br>Tokyo, Japan (remote)</div>
+      </div>
+      <ul>
+        <li>Built core features around the <strong>Model Context Protocol (MCP)</strong> and a Text2SQL agent spanning 10+ tools, LLM guardrails, an LLM proxy, and a vector database of <strong>85k+</strong> location profiles and <strong>900k+</strong> POIs in the USA.</li>
+        <li>Led demographic data curation and POI categorisation across 50+ countries for the <a href="https://catalog.xmap.ai/">xMap Datashop</a>, with an automated pipeline refreshing the catalog monthly for <strong>233</strong> countries.</li>
+        <li>Delivered footfall and mobility data for <strong>Uber</strong> (10M+ records) and chatbot solutions for <strong>Rakuten</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div><h3>Research Student</h3><div class="org">BioMedIA Lab, MBZUAI</div></div>
+        <div class="when">Jun 2024 — Aug 2026<br>Abu Dhabi, UAE</div>
+      </div>
+      <ul>
+        <li>First-authored <strong>MMRINet</strong> (MIUA 2026) and <strong>SALT</strong> (BMVC 2025), a new state-of-the-art PEFT method for adapting SAM to medical imaging; co-authored <strong>MetaVFM</strong> (MICCAI 2026).</li>
+        <li>Led a team of 6 interns in BraTS 2025 across 3 tasks, securing <strong>3rd place</strong> in the SSA track with an oral presentation invitation.</li>
+        <li>Selected as one of 44 interns from 1000+ applicants; secured <strong>3rd place</strong> in two BraTS 2024 tracks at MICCAI 2024.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div><h3>Applied Science Intern</h3><div class="org">Microsoft &middot; Mobile R&amp;D</div></div>
+        <div class="when">Jul 2024 — Oct 2024<br>Cairo, Egypt</div>
+      </div>
+      <ul>
+        <li>Built an FST-based keyboard decoder research prototype for <strong>SwiftKey</strong>, integrating MVPs for autocomplete, word prediction and autocorrection.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div><h3>R&amp;D Software Engineer (Part-time)</h3><div class="org">ElARABY Group</div></div>
+        <div class="when">Dec 2023 — Jun 2024<br>Benha, Egypt</div>
+      </div>
+      <ul>
+        <li>Worked in a 5-engineer team integrating home appliances with an IoT platform on <strong>Microsoft Azure</strong>; built two prototypes simulating the end-to-end solution.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <div><h3>M.Sc. in Computer Vision</h3><div class="org">Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)</div></div>
+        <div class="when">Aug 2026 — May 2028</div>
+      </div>
+      <ul><li>Admitted with a 1.5% acceptance rate.</li></ul>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <div><h3>B.Sc. in Computer Science and Engineering</h3><div class="org">Egypt-Japan University of Science and Technology (E-JUST)</div></div>
+        <div class="when">Oct 2021 — Jun 2026</div>
+      </div>
+      <ul>
+        <li>Fully funded &middot; CGPA <strong>3.88 / 4.00</strong>.</li>
+        <li>Graduation project: <strong>CulTex-VLM</strong>, a vision-language model for Egyptian cultural context, mentored by Microsoft EDC (A+). Built the first geo-diverse visual commonsense reasoning dataset focused on Egyptian culture.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="awards">
+    <h2>Honors &amp; awards</h2>
+    <div class="entry">
+      <div class="entry-head"><h3>EJEP Scholar &mdash; Kyushu University, Japan</h3><div class="when">Mar 2025 — Sep 2025</div></div>
+      <ul><li>Fully funded one-semester exchange scholarship for top-performing students (ranked 4th in class).</li></ul>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><h3>ACM ICPC &mdash; ACPC 2024 qualifier</h3><div class="when">Jul 2024</div></div>
+      <ul><li>1st place at E-JUST; 37th overall at the ECPC finals.</li></ul>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><h3>1st Place &mdash; JAC-ECC Project-Based Learning Competition</h3><div class="when">Nov 2023</div></div>
+      <ul><li>11th International Japan-Africa Conference on Electronics, Communications, and Computations.</li></ul>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><h3>Technical Instructor &amp; Core Team &mdash; GDSC E-JUST</h3><div class="when">Nov 2022 — Mar 2023</div></div>
+      <ul><li>Designed a 12-week <a href="https://www.youtube.com/watch?v=moWIqwBR1i4&amp;list=PLgIeJ2o8x_bwNK_QBGp4VFd0zrYUdxmMU">Android development course</a> for 40+ students, ran a Python crash course for 60+, and coordinated a boot camp for 12+ Solution Challenge teams.</li></ul>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <p class="skill-label">Languages &amp; frameworks</p>
+    <div class="tags"><span class="tag">Python</span><span class="tag">C++</span><span class="tag">SQL</span><span class="tag">PyTorch</span><span class="tag">MONAI</span></div>
+    <p class="skill-label">Tools</p>
+    <div class="tags"><span class="tag">Git</span><span class="tag">Linux</span><span class="tag">PostgreSQL</span><span class="tag">Firebase</span><span class="tag">Azure</span><span class="tag">GCP</span><span class="tag">MCP</span></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; <span id="y">2026</span> Abdelrahman Elsayed</div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
